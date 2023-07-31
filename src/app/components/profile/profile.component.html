@@ -1,0 +1,74 @@
+<!-- NOT COMPLETED -->
+
+<div class="page-heading contact-heading header-text" style="background-image: url(assets/images/infinity-login.jpg);">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="text-content">
+
+
+
+
+                    <div class="container">
+                        <div class="profile">
+                            <img src="/assets/profile.png" alt="default user" />
+                            <h3>User Info:</h3>
+
+
+                            <!-- EDIT MODE -->
+
+
+                            <!-- email input -->
+                            <div class="flex">
+                                <p>Email:</p>
+                                <input type="email" id="email" formControlName="email" />
+                            </div>
+
+                            <!-- email validations -->
+                            <!-- <ng-container *ngIf="profileForm.get('email')?.touched">
+                                <p class="error" *ngIf="profileForm.get('email')?.errors?.['required']">
+                                    Email is required!
+                                </p>
+                                <p class="error" *ngIf="profileForm.get('email')?.errors?.['appEmailValidator']">
+                                    Email is not valid!
+                                </p>
+                            </ng-container> -->
+
+
+
+                            <!-- password input -->
+                            <div class="flex">
+                                <p>Old Password:</p>
+                                <input type="password" id="password" formControlName="password" />
+                            </div>
+
+                            <div class="flex">
+                                <p>New Password:</p>
+                                <input type="password" id="password" formControlName="password" />
+                            </div>
+
+
+                            <!-- ACTIONS -->
+                            <div class="formGroup">
+                                <div class="btn">
+                                    <input type="button" class="btn btnPrimary" value="Cancel" class="red-button" />
+                                </div>
+
+                                <div class="btn">
+                                    <input type="button" class="btn btnPrimary" value="Save" class="green-button" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

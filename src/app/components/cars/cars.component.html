@@ -1,0 +1,130 @@
+<!-- Page Content -->
+<div class="page-heading about-heading header-text" style="background-image: url(assets/images/mercedes-house.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>Checkout our Cars Catalog</h4>
+                    <h2>Cars</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="products">
+    <div class="detail-text-title">
+        <h5>To see details, Please <a routerLink="/sign-in">Log in</a></h5>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <app-search (searchTextChanged)="onSearchTextEntered($event)" />
+                <app-drop-down-filter [Cars]="Cars" (filteredDataEvent)="updateFilteredData($event)" />
+
+            </div>
+
+
+
+            <div class="col-md-9">
+
+
+                <!-- Filtered Cars Data -->
+                <div class="row" *ngIf="isFilterApplied">
+
+                    <div class="col-md-6" *ngFor="let car of filteredData | paginate: { itemsPerPage: 6, currentPage: p };
+                                let i = index">
+
+                        <div class="product-item"
+                            *ngIf="searchText === '' || car.brand.toLowerCase().includes(searchText)">
+                            <!-- <div>{{ car.$key }}</div> -->
+                            <!-- {{isLoggedInAuth | json}} -->
+
+                            <a routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
+
+
+                            <div class="down-content">
+                                <a routerLink="/details-car/{{ car.$key }}">
+                                    <h4>{{car.brand}} {{car.model}}</h4>
+                                </a>
+
+                                <h6> ${{car.price}}</h6>
+
+                                <p>{{car.euStandard}} &nbsp;/&nbsp; {{car.engine}} &nbsp;/&nbsp;{{car.month}}
+                                    {{car.year}} &nbsp;/&nbsp;</p>
+
+                                <small>
+                                    <strong title="Author"><i class="fa fa-dashboard"></i> {{car.mileage}} km</strong>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Author"><i class="fa fa-cube"></i>
+                                        {{car.color}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Views"><i class="fa fa-cog"></i> {{car.gearshift}}</strong>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Not Filtered Cars Data -->
+                <div class="row" *ngIf="!isFilterApplied">
+
+                    <div class="col-md-6" *ngFor="let car of Cars | paginate: { itemsPerPage: 6, currentPage: p };
+                                let i = index">
+
+                        <div class="product-item"
+                            *ngIf="searchText === '' || car.brand.toLowerCase().includes(searchText)">
+                            <!-- <div>{{ car.$key }}</div> -->
+                            <!-- {{isLoggedInAuth | json}} -->
+
+                            <a routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
+                            <!-- <ng-template ngIf="isLoggedInAuth">
+                                <a  routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
+                            </ng-template>
+                            <ng-template ngIf="isLoggedInAuth">
+                                <a  routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
+                            </ng-template> -->
+
+                            <div class="down-content">
+                                <a routerLink="/details-car/{{ car.$key }}">
+                                    <h4>{{car.brand}} {{car.model}}</h4>
+                                </a>
+
+                                <h6> ${{car.price}}</h6>
+
+                                <p>{{car.euStandard}} &nbsp;/&nbsp; {{car.engine}} &nbsp;/&nbsp;{{car.month}}
+                                    {{car.year}} &nbsp;/&nbsp;</p>
+
+                                <small>
+                                    <strong title="Author"><i class="fa fa-dashboard"></i> {{car.mileage}}
+                                        km</strong>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Author"><i class="fa fa-cube"></i>
+                                        {{car.color}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Views"><i class="fa fa-cog"></i> {{car.gearshift}}</strong>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Pagination -->
+                <div class="col-md-12">
+                    <div class="pages">
+
+                        <div class="active">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,262 @@
+<!-- Page Content -->
+
+<!-- Banner Starts Here -->
+<div class="banner header-text">
+  <div class="owl-banner owl-carousel">
+    <div class="banner-item-01">
+      <div class="text-content">
+        <h4>Find your car today!</h4>
+        <h2>Best Used Cars in Bulgaria</h2>
+      </div>
+    </div>
+    <div class="banner-item-02">
+      <div class="text-content">
+        <h4>Financial leasing</h4>
+        <h2>The best leasing conditions with us</h2>
+      </div>
+    </div>
+    <div class="banner-item-03">
+      <div class="text-content">
+        <h4>Service</h4>
+        <h2>Our cars are serviced before sale</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Banner Ends Here -->
+
+<div class="latest-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>Our Best Offers</h2>
+          <a routerLink="/cars">view more <i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+
+
+      <div class="col-md-4" *ngFor="
+      let car of Car
+        | paginate: { itemsPerPage: 6, currentPage: p };
+      let i = index">
+
+        <div class="product-item">
+          <!-- <div>{{ car.$key }}</div> -->
+          <a><img src={{car.imageUrl}} alt=""></a>
+          <div class="down-content">
+            <a><h4>{{car.brand}} {{car.model}}</h4></a>
+
+            <h6> ${{car.price}}</h6>
+
+            <p>{{car.euStandard}} &nbsp;/&nbsp; {{car.engine}} &nbsp;/&nbsp;{{car.month}}
+              {{car.year}} &nbsp;/&nbsp;</p>
+
+            <small>
+              <strong title="Author"><i class="fa fa-dashboard"></i> {{car.mileage}} km</strong>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <strong title="Author"><i class="fa fa-cube"></i>
+                {{car.color}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+              <strong title="Views"><i class="fa fa-cog"></i> {{car.gearshift}}</strong>
+            </small>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="best-features">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>About Us</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="left-content">
+          <p>Our company was founded in 2003. in the city of Varna and for 20 years we have become the leader in the
+            sale of used cars in Bulgaria.
+            We have centers in all major cities, and in all our stores we also have service centers to serve our
+            customers.
+            <br><br>
+            We import only the best cars from Western Europe, with a proven service history.
+            <br>
+            Кris's Cars have many available cars in stock, we also import custom cars.
+            <br><br>
+            The company offers financial leasing, under very advantageous conditions, which you can take advantage of.</p>
+          <ul class="featured-list">
+            <li><a routerLink="/cars">Find your car</a></li>
+            <li><a routerLink="/contacts">Contact Us</a></li>
+            <li><a routerLink="/sign-in">Login</a></li>
+            <li><a routerLink="/register-user">Register</a></li>
+          </ul>
+          <a routerLink="/about" class="filled-button">Read More</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="right-image">
+          <img src="assets/images/about-1-570x350.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services" style="background-image: url(assets/images/other-image-fullscren-1-1920x900.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>Latest blog posts</h2>
+
+          <a href="blog.html">read more <i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item">
+          <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid"
+              alt=""></a>
+
+          <div class="down-content">
+            <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
+
+            <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item">
+          <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid"
+              alt=""></a>
+
+          <div class="down-content">
+            <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
+
+            <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item">
+          <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid"
+              alt=""></a>
+
+          <div class="down-content">
+            <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
+
+            <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="happy-clients">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>Happy Clients</h2>
+
+          <a href="testimonials.html">read more <i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="owl-clients owl-carousel text-center">
+          <div class="service-item">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="down-content">
+              <h4>John Doe</h4>
+              <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at
+                  quia quaerat."</em></p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="down-content">
+              <h4>Jane Smith</h4>
+              <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at
+                  quia quaerat."</em></p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="down-content">
+              <h4>Antony Davis</h4>
+              <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at
+                  quia quaerat."</em></p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="down-content">
+              <h4>John Doe</h4>
+              <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at
+                  quia quaerat."</em></p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="down-content">
+              <h4>Jane Smith</h4>
+              <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at
+                  quia quaerat."</em></p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="down-content">
+              <h4>Antony Davis</h4>
+              <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at
+                  quia quaerat."</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="inner-content">
+          <div class="row">
+            <div class="col-md-8">
+              <h4>You can contacts us by phone or leave a message</h4>
+              <p>Please feel free to ask any questions.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 text-right">
+              <a routerLink="/contacts" class="filled-button">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

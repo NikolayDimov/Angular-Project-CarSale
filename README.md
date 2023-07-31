@@ -1,3 +1,11 @@
+# Angular-Project-CarSale
+
+You have possibility:
+- to browse car ads
+- to add your car ads after registration
+- to edit car ads
+
+
 # AngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.

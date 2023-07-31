@@ -1,0 +1,310 @@
+<div class="page-heading contact-heading header-text"
+    style="background-image: url({{CarImage.imageUrl}});">
+    <!-- App Throw ERROR TypeError: ctx.Car is undefined -->
+
+    <div class="container">
+
+        <div class="title">Edit your car data</div>
+
+        <div class="row">
+
+            <div class="col-md-10">
+                <div class="text-content">
+
+
+                    <form class="row g-3" [formGroup]="editForm" (ngSubmit)="updateForm()">
+
+                        <div class="col-md-3">
+                            <label for="inputBrand" class="form-label">Brand</label>
+                            <input type="text" class="form-control" formControlName="brand" required>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="brand.touched && brand.invalid" class="alert alert-danger">
+                                    Please enter Brand
+                                </p>
+                                <p *ngIf="brand.errors?.['minlength']" class="error">
+                                    Brand shouldn't be less than 3 characters long
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputModel" class="form-label">Model</label>
+                            <input type="text" class="form-control" formControlName="model" required>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="model.touched && model.invalid" class="error">
+                                    Please enter Model
+                                </p>
+                                <p *ngIf="model.errors?.['minlength']" class="error">
+                                    Brand shouldn't be less than 2 characters long
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputEngine" class="form-label">Engine</label>
+                            <select id="inputEngine" class="form-select" formControlName="engine" required>
+                                <option value="" disabled selected>Choose...</option>
+                                <option>Gasoline</option>
+                                <option>Diesel</option>
+                                <option>Hybrid</option>
+                                <option>Electric</option>
+                            </select>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="engine.touched && engine.invalid" class="error">
+                                    Please enter Engine type
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputGearshift" class="form-label">Gearshift</label>
+                            <select id="inputGearshift" class="form-select" formControlName="gearshift" required>
+                                <option value="" disabled selected>Choose...</option>
+                                <option>Manual</option>
+                                <option>Automatic</option>
+                                <option>Semi-Automatic</option>
+                            </select>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="gearshift.touched && gearshift.invalid" class="error">
+                                    Please enter Gearshift type
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputEUStandard" class="form-label">Euro Standard</label>
+                            <select id="inputEUStandard" class="form-select" formControlName="euStandard" required>
+                                <option value="" disabled selected>Choose...</option>
+                                <option>Euro 1</option>
+                                <option>Euro 2</option>
+                                <option>Euro 3</option>
+                                <option>Euro 4</option>
+                                <option>Euro 5</option>
+                                <option>Euro 6</option>
+                            </select>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="euStandard.touched && euStandard.invalid" class="error">
+                                    Please enter Euro Standard
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-3">
+                            <label for="inputColor" class="form-label">Color</label>
+                            <input type="text" class="form-control" formControlName="color" required>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="color.touched && color.invalid" class="error">
+                                    Please enter Color
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputMonth" class="form-label">Month</label>
+                            <select id="inputMonth" class="form-select" formControlName="month" required>
+                                <option value="" disabled selected>Choose...</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="month.touched && month.invalid" class="error">
+                                    Please enter Month
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputYear" class="form-label">Year</label>
+                            <input type="text" class="form-control" formControlName="year" required>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="year.touched && year.invalid" class="error">
+                                    Please enter Year
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputCity" class="form-label">Mileage (km)</label>
+                            <input type="text" class="form-control" formControlName="mileage" required>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="mileage.touched && mileage.invalid" class="error">
+                                    Please enter Mileage
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputPic" class="form-label">Price</label>
+                            <input type="text" class="form-control" placeholder="USD" formControlName="price" required>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="price.touched && price.invalid" class="error">
+                                    Please enter Price
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputImage" class="form-label">Image</label>
+                            <input type="text" class="form-control long-url" placeholder="Add Image URL"
+                                formControlName="imageUrl">
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputCategory" class="form-label">Category</label>
+                            <select id="inputCategory" class="form-select" formControlName="category" required>
+                                <option value="" disabled selected>Choose...</option>
+                                <option>SUV</option>
+                                <option>Van</option>
+                                <option>Sedan</option>
+                                <option>Hatchback</option>
+                                <option>Cabrio</option>
+                                <option>Station wagon</option>
+                            </select>
+                            <!-- errors-->
+                            <ng-container>
+                                <p *ngIf="category.touched && category.invalid" class="error">
+                                    Please enter Category
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" formControlName="city">
+                        </div>
+
+                        <div class="col-md-9">
+                            <label for="inputAdditionalInfo" class="form-label">Additional information</label>
+                            <input type="text" class="form-control" formControlName="additionalInfo">
+                        </div>
+
+
+
+                        <div class="container-checkbox">
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="LED Lights"
+                                        formControlName="ledLights">
+                                    <label class="form-check-label" for="gridCheck">LED Lights</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Electric Mirrors"
+                                        formControlName="electricMirrors">
+                                    <label class="form-check-label" for="gridCheck">Electric Mirrors</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Auto Stop Start Func"
+                                        formControlName="autoStartStopFunction">
+                                    <label class="form-check-label" for="gridCheck">Auto Stop Start Func</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Navigation"
+                                        formControlName="navigation">
+                                    <label class="form-check-label" for="gridCheck">Navigation</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="4x4"
+                                        formControlName="fourAllFour">
+                                    <label class="form-check-label" for="gridCheck">4x4</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Sunroof"
+                                        formControlName="sunroof">
+                                    <label class="form-check-label" for="gridCheck">Sunroof</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="DVD" 
+                                    formControlName="dvd">
+                                    <label class="form-check-label" for="gridCheck">DVD</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="LaneAssist"
+                                        formControlName="laneAssist">
+                                    <label class="form-check-label" for="gridCheck">LaneAssist</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="LeatherSalon"
+                                        formControlName="leatherSalon">
+                                    <label class="form-check-label" for="gridCheck">Leather Salon</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="CruiseControl"
+                                        formControlName="cruiseControl">
+                                    <label class="form-check-label" for="gridCheck">CruiseControl</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="2(3) Doors"
+                                        formControlName="twoThreeDoors">
+                                    <label class="form-check-label" for="gridCheck">2(3) Doors</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="4(5) Doors"
+                                        formControlName="fourFiveDoors">
+                                    <label class="form-check-label" for="gridCheck">4(5) Doors</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="btnForm">
+                                <button type="submit" value="Submit" class="btn btn-primary"
+                                    [disabled]="editForm.invalid">Update Car Info</button>
+                            </div>
+
+                            <div class="btnForm">
+                                <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

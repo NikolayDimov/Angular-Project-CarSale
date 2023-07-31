@@ -1,0 +1,13 @@
+.pages{
+    position: relative;
+    float: right;
+}
+
+.detail-text-title{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.products{
+    margin-top: 40px;
+}

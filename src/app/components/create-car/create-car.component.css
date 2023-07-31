@@ -1,0 +1,52 @@
+.page-heading {
+    background: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.5)), url('/src/assets/images/mercedes_add_car.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: -25px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    /* object-fit: cover; */
+}
+
+.row {
+    backdrop-filter: blur(1px);
+
+}
+
+.title {
+    padding-top: 0;
+    padding-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(200, 193, 207);
+}
+
+
+
+.col-md-10 {
+    margin: 0 auto;
+    color: rgb(200, 193, 207);
+
+}
+
+.form-check {
+    color: rgb(200, 193, 207);
+    padding-top: 10px;
+}
+
+.col-12 {
+    padding-top: 20px;
+}
+
+.error {
+    color: rgb(200, 193, 207);
+}
+
+.container-checkbox {
+    column-count: 3;
+    column-gap: 2rem;
+    list-style: none;
+    text-align: left;
+}

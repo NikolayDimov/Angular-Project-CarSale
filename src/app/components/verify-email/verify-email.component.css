@@ -1,0 +1,27 @@
+.redirectToLogin{
+    color: beige;
+}
+
+.redirect:hover{
+    background-color: #F33F3F;
+    border-radius: 4px;
+}
+
+.btn{
+    color: beige;
+    border-radius: 2px solid red;
+}
+
+.btn:hover{
+    background-color: #F33F3F;
+    border-radius: 4px;
+}
+
+.authBlock{
+    color: beige;
+}
+
+.text-center{
+    color: beige;
+}
+
