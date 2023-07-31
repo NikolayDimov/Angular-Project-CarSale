@@ -4,6 +4,7 @@ You have possibility:
 - to browse car ads
 - to add your car ads after registration
 - to edit car ads
+- search in car catalog
 
 
 # AngularProject
