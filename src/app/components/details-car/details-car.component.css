@@ -21,19 +21,19 @@
       padding-bottom: 40px;
       font-size: 30px;
       font-weight: bold;
-      color:  rgb(200, 193, 207);
+      color:  rgb(248, 244, 253);
   }
   
   
   
   .col-md-10{
       margin: 0 auto;
-      color:  rgb(200, 193, 207);
+      color:  rgb(248, 244, 253);
       
   }
   
   .form-check{
-      color: rgb(200, 193, 207);
+      color: rgb(248, 244, 253);
       padding-top: 10px;
   }
   
@@ -42,7 +42,7 @@
   }
   
   .error{
-      color: rgb(200, 193, 207);
+      color: rgb(248, 244, 253);
   }
 
 
@@ -65,4 +65,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .more-ads{
+    margin-top: 40px;
   }

@@ -1,0 +1,24 @@
+.btnForm {
+    display: inline-block;
+    /* Add other button styles as needed */
+  }
+  
+  /* .btn-container {
+    
+    width: 100%;
+  } */
+  
+  /* Float the buttons to the right */
+  .btnForm {
+    float: right;
+  }
+  
+
+
+
+.pages{
+  margin-top: 100px;
+    position: relative;
+    float: right;
+}
+

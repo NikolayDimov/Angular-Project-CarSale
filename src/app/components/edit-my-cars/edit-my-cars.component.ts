@@ -13,6 +13,9 @@ import { toArray } from 'rxjs/operators';
 
 
 
+
+
+
 @Component({
   selector: 'app-edit-my-cars',
   templateUrl: './edit-my-cars.component.html',
@@ -54,9 +57,11 @@ export class EditMyCarsComponent implements OnInit {
 
         // Use the UID to filter the data for the logged-in user
         this.userData$ = this.dataService.getItemsByUID(userUID);
-        console.log(this.userData$);
+       // console.log(this.userData$);
 
 
+        
+        //----------------------------------------------------------------
         let observableData = of(this.userData$);
 
         // observableData.pipe(
@@ -87,25 +92,26 @@ export class EditMyCarsComponent implements OnInit {
         //   }
         // );
 
-        observableData.pipe(
-          isEmpty(),
-          toArray()
-        ).subscribe(
-          data => {
-            if (data.length === 0 && isEmpty) {
-              console.log('The Observable is empty.');
-            } else {
-              console.log('The Observable has data.');
-              // Here you can do something with the data if needed
-            }
-          },
-          error => {
-            console.error('An error occurred:', error);
-          },
-          () => {
-            console.log('The Observable completed.');
-          }
-        );
+        // observableData.pipe(
+        //   isEmpty(),
+        //   toArray()
+        // ).subscribe(
+        //   data => {
+        //     if (data.length === 0 && isEmpty) {
+        //       console.log('The Observable is empty.');
+        //     } else {
+        //       console.log('The Observable has data.');
+        //       // Here you can do something with the data if needed
+        //     }
+        //   },
+        //   error => {
+        //     console.error('An error occurred:', error);
+        //   },
+        //   () => {
+        //     console.log('The Observable completed.');
+        //   }
+        // );
+        //----------------------------------------------------------------
 
       }
     });
@@ -141,5 +147,6 @@ export class EditMyCarsComponent implements OnInit {
     this.filteredData = filteredData;
     this.isFilterApplied = true;
   }
+
 
 }

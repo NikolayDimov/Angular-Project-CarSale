@@ -1,0 +1,122 @@
+<!-- Page Content -->
+<div class="page-heading about-heading header-text" style="background-image: url(assets/images/mercedes-house3.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>On this page you can edit your</h4>
+                    <h2>Car Ads</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <app-search (searchTextChanged)="onSearchTextEntered($event)" />
+                <app-drop-down-filter [Cars]="Cars" (filteredDataEvent)="updateFilteredData($event)" />
+
+            </div>
+
+            <div class="col-md-9">
+
+
+                <!-- Filtered Cars Data -->
+                <div class="row" *ngIf="isFilterApplied">
+                    <div class="col-md-6"
+                        *ngFor="let dataItem of filteredData | paginate: { itemsPerPage: 6, currentPage: p }">
+
+                        <!-- {{dataItem | json}} -->
+
+                        <div class="product-item">
+                            <!-- <div>{{ car.$key }}</div> -->
+                            <a><img src={{dataItem.imageUrl}} alt=""></a>
+                            <div class="down-content">
+                                <a>
+                                    <h4>{{dataItem.brand}} {{dataItem.model}}</h4>
+                                </a>
+
+                                <h6> ${{dataItem.price}}</h6>
+
+                                <p>{{dataItem.euStandard}} &nbsp;/&nbsp; {{dataItem.engine}}
+                                    &nbsp;/&nbsp;{{dataItem.month}}
+                                    {{dataItem.year}} &nbsp;/&nbsp;</p>
+
+                                <small>
+                                    <strong title="Author"><i class="fa fa-dashboard"></i> {{dataItem.mileage}}
+                                        km</strong>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Author"><i class="fa fa-cube"></i>
+                                        {{dataItem.color}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Views"><i class="fa fa-cog"></i> {{dataItem.gearshift}}</strong>
+                                </small>
+                            </div>
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Not Filtered Cars Data -->
+                <div class="row" *ngIf="!isFilterApplied">
+                    
+                    <div class="col-md-6"
+                        *ngFor="let dataItem of userDataMoreAds$ | async | paginate: { itemsPerPage: 6, currentPage: p }">
+
+                        <!-- {{dataItem | json}} -->
+
+                        <div class="product-item">
+                            <!-- <div>{{ car.$key }}</div> -->
+                            <a><img src={{dataItem.imageUrl}} alt=""></a>
+                            <div class="down-content">
+                                <a>
+                                    <h4>{{dataItem.brand}} {{dataItem.model}}</h4>
+                                </a>
+
+                                <h6> ${{dataItem.price}}</h6>
+
+                                <p>{{dataItem.euStandard}} &nbsp;/&nbsp; {{dataItem.engine}}
+                                    &nbsp;/&nbsp;{{dataItem.month}}
+                                    {{dataItem.year}} &nbsp;/&nbsp;</p>
+
+                                <small>
+                                    <strong title="Author"><i class="fa fa-dashboard"></i> {{dataItem.mileage}}
+                                        km</strong>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Author"><i class="fa fa-cube"></i>
+                                        {{dataItem.color}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <strong title="Views"><i class="fa fa-cog"></i> {{dataItem.gearshift}}</strong>
+                                </small>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+            <!-- Pagination -->
+            <div class="col-md-12">
+                <div class="pages">
+
+                    <div class="active">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

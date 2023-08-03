@@ -28,6 +28,7 @@ import { EditMyCarsComponent } from './edit-my-cars/edit-my-cars.component';
 import { DetailsCarComponent } from './details-car/details-car.component';
 import { SearchComponent } from './search/search.component';
 import { DropDownFilterComponent } from './drop-down-filter/drop-down-filter.component';
+import { MoreAdsUserComponent } from './more-ads-user/more-ads-user.component';
 
 
 
@@ -49,6 +50,7 @@ import { DropDownFilterComponent } from './drop-down-filter/drop-down-filter.com
     EditMyCarsComponent,
     SearchComponent,
     DropDownFilterComponent,
+    MoreAdsUserComponent,
   ],
   imports: [
     CommonModule,
@@ -74,7 +76,8 @@ import { DropDownFilterComponent } from './drop-down-filter/drop-down-filter.com
     ProfileComponent,
     EditCarComponent,
     DetailsCarComponent,
-    EditMyCarsComponent
+    EditMyCarsComponent,
+    MoreAdsUserComponent
   ]
 })
 export class ComponentsModule { }

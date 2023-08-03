@@ -14,8 +14,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 
 
-// Auth service
+// Services
 import { AuthService } from "./shared/services/auth.service";
+import { CrudService } from './shared/services/crud.service';
+import { DataSharedService } from './shared/services/sharedObj.service';
+import { DataService } from './shared/services/user.service';
+
 import { CoreModule } from './core/core.module';
 import { ComponentsModule } from './components/components.module';
 
@@ -27,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // NGX Pagination
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
+
 
 // Search module
 
@@ -53,7 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgxPaginationModule,  // Include it in imports array
     HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, CrudService, DataService, DataSharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

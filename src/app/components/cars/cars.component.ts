@@ -74,7 +74,7 @@ export class CarsComponent implements OnInit {
   searchText: string = '';
 
   onSearchTextEntered(searchValue: string) {
-    console.log("2 - " + searchValue);
+    //console.log("2 - " + searchValue);
 
     this.searchText = searchValue;
     // console.log(this.searchText);

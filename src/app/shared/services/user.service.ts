@@ -15,7 +15,7 @@ export class DataService {
   constructor(private db: AngularFireDatabase) { }
 
   getItemsByUID(uid: string): Observable<Car[]> {
-    // Query the Realtime Database to filter items where "uid" field matches the provided UID
+    // Query the Realtime Database to filter items where "uid" field matches the provided UID 
 
     return this.db.list<Car>('cars', (ref) => ref.orderByChild('uid').equalTo(uid)).snapshotChanges()
     .pipe(
