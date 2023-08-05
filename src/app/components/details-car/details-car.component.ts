@@ -5,6 +5,7 @@ import { CrudService } from 'src/app/shared/services/crud.service';
 import { Location } from '@angular/common';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Car } from 'src/app/shared/car';
+import { ShortenPipe } from 'src/app/shared/pipes/shorten.pipe';
 
 import { DataSharedService } from '../../shared/services/sharedObj.service';
 
@@ -19,6 +20,7 @@ import { DataSharedService } from '../../shared/services/sharedObj.service';
 export class DetailsCarComponent implements OnInit {
 
   Car: Car;
+  ShortenPipe: ShortenPipe;
 
   constructor(
     private crudApi: CrudService,
@@ -26,7 +28,7 @@ export class DetailsCarComponent implements OnInit {
     private actRoute: ActivatedRoute,
     public authService: AuthService,
     private router: Router,
-    private dataSharedService: DataSharedService
+    private dataSharedService: DataSharedService,
   ) { }
 
 
@@ -39,11 +41,9 @@ export class DetailsCarComponent implements OnInit {
       .subscribe((data) => {
         this.Car = data;
         // console.log(this.Car);  // -> this.Car.object
-        
+
       });
   }
-
-
 
 
 
@@ -56,7 +56,7 @@ export class DetailsCarComponent implements OnInit {
     this.dataSharedService.setSharedObject(this.Car);
     this.router.navigate(['/more-ads-user']);
     // console.log(this.Car);
-    
+
   }
 
   // For Loop

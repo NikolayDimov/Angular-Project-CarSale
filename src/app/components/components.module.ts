@@ -29,6 +29,7 @@ import { DetailsCarComponent } from './details-car/details-car.component';
 import { SearchComponent } from './search/search.component';
 import { DropDownFilterComponent } from './drop-down-filter/drop-down-filter.component';
 import { MoreAdsUserComponent } from './more-ads-user/more-ads-user.component';
+import { ShortenPipe } from '../shared/pipes/shorten.pipe';
 
 
 
@@ -51,6 +52,7 @@ import { MoreAdsUserComponent } from './more-ads-user/more-ads-user.component';
     SearchComponent,
     DropDownFilterComponent,
     MoreAdsUserComponent,
+    ShortenPipe
   ],
   imports: [
     CommonModule,

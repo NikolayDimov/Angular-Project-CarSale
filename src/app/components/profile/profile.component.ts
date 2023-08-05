@@ -27,7 +27,7 @@ export class ProfileComponent {
   profileForm = this.fb.group({
     // username: ["", [Validators.required, Validators.minLength(5)]],
     // uid:[''],
-    email: ["", [Validators.required, appEmailValidator(['bg', 'com', 'eu'])],],
+    email: ['', [Validators.required, appEmailValidator(['bg', 'com', 'eu'])]],
     // tel: [""],
     // ToDo: render this from the template and make more fields on click of a button
     // persons: this.fb.array([]),

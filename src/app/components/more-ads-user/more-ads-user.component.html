@@ -34,9 +34,9 @@
 
                         <div class="product-item">
                             <!-- <div>{{ car.$key }}</div> -->
-                            <a><img src={{dataItem.imageUrl}} alt=""></a>
+                            <a routerLink="/details-car/{{ dataItem.$key }}"><img src={{dataItem.imageUrl}} alt=""></a>
                             <div class="down-content">
-                                <a>
+                                <a routerLink="/details-car/{{ dataItem.$key }}">
                                     <h4>{{dataItem.brand}} {{dataItem.model}}</h4>
                                 </a>
 
@@ -74,9 +74,9 @@
 
                         <div class="product-item">
                             <!-- <div>{{ car.$key }}</div> -->
-                            <a><img src={{dataItem.imageUrl}} alt=""></a>
+                            <a routerLink="/details-car/{{ dataItem.$key }}"><img src={{dataItem.imageUrl}} alt=""></a>
                             <div class="down-content">
-                                <a>
+                                <a routerLink="/details-car/{{ dataItem.$key }}">
                                     <h4>{{dataItem.brand}} {{dataItem.model}}</h4>
                                 </a>
 

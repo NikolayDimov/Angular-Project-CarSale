@@ -65,7 +65,7 @@
 
                     <div class="col-md-3">
                         <label class="form-label">Image</label>
-                        <label class="form-control long-url">{{Car.imageUrl}}</label>
+                        <label class="form-control long-url">{{Car.imageUrl | ShortenPipe: 25}}</label>
                     </div>
 
                     <div class="col-md-3">
