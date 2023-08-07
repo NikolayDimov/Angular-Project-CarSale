@@ -17,6 +17,8 @@ export class CarsComponent implements OnInit {
   Cars: Car[];
   filteredData: Car[] = [];
   isFilterApplied: boolean = false;
+  errorMessage: string | null = null;
+
 
   hideWhenNoCar: boolean = false;
   noData: boolean = false;
@@ -41,9 +43,9 @@ export class CarsComponent implements OnInit {
   // redirectToRegister(): void {
   //   this.router.navigateByUrl('/register-user');
   // }
-  
 
-  ngOnInit() {
+
+  ngOnInit(): void {
     this.dataState();
     let s = this.crudApi.GetCarsList();
     s.snapshotChanges().subscribe(data => {
@@ -53,7 +55,11 @@ export class CarsComponent implements OnInit {
         a['$key'] = item.key;
         this.Cars.push(a as Car);
         // console.log(this.Cars); // array of objects with cars
-      })
+      },
+        error => {
+          console.error('Error in ngOnInit:', error);
+          this.errorMessage = 'An error occurred: ' + error.message;
+        })
     })
   }
 
@@ -69,7 +75,7 @@ export class CarsComponent implements OnInit {
       }
     })
   }
-  
+
 
   searchText: string = '';
 

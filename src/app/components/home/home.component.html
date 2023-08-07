@@ -35,7 +35,9 @@
         </div>
       </div>
 
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 
+      
       <div class="col-md-4" *ngFor="
       let car of Car
         | paginate: { itemsPerPage: 6, currentPage: p };

@@ -19,6 +19,8 @@ export class EditCarComponent implements OnInit {
   editForm: FormGroup;
   isThereCars: boolean = false;
   CarImage: Car;
+  errorMessage: string | null = null;
+
 
   constructor(
     private crudApi: CrudService,
@@ -30,7 +32,7 @@ export class EditCarComponent implements OnInit {
     public authService: AuthService,
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.updateCarData();
     const id = this.actRoute.snapshot.paramMap.get('id');
     this.crudApi
@@ -39,6 +41,10 @@ export class EditCarComponent implements OnInit {
       .subscribe((data) => {
         this.editForm.setValue(data);
         this.CarImage = data;
+      },
+      error => {
+        console.error('Error in ngOnInit:', error);
+        this.errorMessage = 'An error occurred: ' + error.message;
       });
     
   }

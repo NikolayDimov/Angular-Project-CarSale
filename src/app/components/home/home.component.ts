@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   hideWhenNoCar: boolean = false;
   noData: boolean = false;
   preLoader: boolean = true;
+  errorMessage: string | null = null;
  
 
   constructor(
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit {
   }
   
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.dataState();
     let s = this.crudApi.GetCarsList();
     s.snapshotChanges().subscribe(data => {
@@ -42,7 +43,10 @@ export class HomeComponent implements OnInit {
         a['$key'] = item.key;
         this.Car.push(a as Car);
         // console.log(this.Car);
-
+      },
+      error => {
+        console.error('Error in ngOnInit:', error);
+        this.errorMessage = 'An error occurred: ' + error.message;
       })
     })
   }

@@ -21,6 +21,7 @@ export class DetailsCarComponent implements OnInit {
 
   Car: Car;
   ShortenPipe: ShortenPipe;
+  errorMessage: string | null = null;
 
   constructor(
     private crudApi: CrudService,
@@ -32,7 +33,7 @@ export class DetailsCarComponent implements OnInit {
   ) { }
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
 
     this.crudApi
@@ -42,7 +43,11 @@ export class DetailsCarComponent implements OnInit {
         this.Car = data;
         // console.log(this.Car);  // -> this.Car.object
 
-      });
+      },
+        error => {
+          console.error('Error in ngOnInit:', error);
+          this.errorMessage = 'An error occurred: ' + error.message;
+        });
   }
 
 

@@ -39,7 +39,7 @@ export class CreateCarComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.crudApi.GetCarsList();
     this.car_Form();
   }

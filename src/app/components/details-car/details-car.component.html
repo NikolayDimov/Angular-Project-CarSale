@@ -7,6 +7,7 @@
         <div class="title">Car Details</div>
 
         <div class="row">
+            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 
             <div class="col-md-10">
                 <div class="text-content">

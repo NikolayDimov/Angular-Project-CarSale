@@ -25,11 +25,15 @@
 
             </div>
 
+            <!-- <div *ngIf="noData" class="col-md-9">
+                <div>There is no Cars offers</div>
+            </div> -->
 
 
             <div class="col-md-9">
 
-
+                <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+                
                 <!-- Filtered Cars Data -->
                 <div class="row" *ngIf="isFilterApplied">
 

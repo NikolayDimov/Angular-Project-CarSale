@@ -43,7 +43,7 @@ export class MoreAdsUserComponent implements OnInit {
   ) { }
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sharedCarObj = this.dataSharedService.getSharedObject();
     this.currCarUid = this.sharedCarObj.uid;
     // console.log(this.sharedCarObj);
