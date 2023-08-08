@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from "../../shared/services/auth.service";
-import { User } from "src/app/shared/services/user";
+import { User } from "src/app/shared/user";
 import { NgForm } from '@angular/forms';
 
 

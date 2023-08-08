@@ -3,7 +3,7 @@ import { AuthService } from "../../shared/services/auth.service";
 import { FormBuilder, Validators } from "@angular/forms";
 import { appEmailValidator } from "src/app/shared/validators/app-email-validator";
 import { matchPasswordsValidator } from "src/app/shared/validators/match-passwords-validator";
-import { User } from '../../shared/services/user';
+import { User } from '../../shared/user';
 
 @Component({
   selector: 'app-sign-up',

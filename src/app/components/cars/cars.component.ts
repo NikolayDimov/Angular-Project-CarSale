@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css']
 })
+
 export class CarsComponent implements OnInit {
 
   p: number = 1;
@@ -48,19 +49,21 @@ export class CarsComponent implements OnInit {
   ngOnInit(): void {
     this.dataState();
     let s = this.crudApi.GetCarsList();
-    s.snapshotChanges().subscribe(data => {
-      this.Cars = [];
-      data.forEach(item => {
-        let a = item.payload.toJSON();
-        a['$key'] = item.key;
-        this.Cars.push(a as Car);
-        // console.log(this.Cars); // array of objects with cars
-      },
-        error => {
-          console.error('Error in ngOnInit:', error);
-          this.errorMessage = 'An error occurred: ' + error.message;
+    s.snapshotChanges().subscribe({
+      next: (data) => {
+        this.Cars = [];
+        data.forEach(item => {
+          let a = item.payload.toJSON();
+          a['$key'] = item.key;
+          this.Cars.push(a as Car);
+          // console.log(this.Cars); // array of objects with cars
         })
-    })
+      },
+      error: (error) => {
+        console.error('Error in carsCatalog ngOnInit:', error);
+        this.errorMessage = 'An error occurred: ' + error.message;
+      }
+    });
   }
 
   dataState() {

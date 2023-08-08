@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from '../services/user';
+import { User } from '../user';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
@@ -57,7 +57,7 @@ export class AuthService {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['cars']);
+            this.router.navigate(['home']);
             this.toastr.success('Login Success');
           }
         });
@@ -80,7 +80,7 @@ export class AuthService {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['cars']);
+            this.router.navigate(['home']);
             this.toastr.success('Register Success');
           }
         });
@@ -186,12 +186,11 @@ export class AuthService {
   //-------------------------
   // Get Token -- // not used
   async getToken() {
-    (await this.afAuth
-      .currentUser)
-    .getIdToken()
-    .then((token: string) => {
-      this.token = token;
-    })
+    (await this.afAuth.currentUser)
+      .getIdToken()
+      .then((token: string) => {
+        this.token = token;
+      })
 
     return this.token;
   }

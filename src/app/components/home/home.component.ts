@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   noData: boolean = false;
   preLoader: boolean = true;
   errorMessage: string | null = null;
- 
+
 
   constructor(
     public crudApi: CrudService,
@@ -31,26 +31,29 @@ export class HomeComponent implements OnInit {
   get isLoggedInAuth(): boolean {
     return this.authService.isLoggedIn;
   }
-  
+
 
   ngOnInit(): void {
     this.dataState();
     let s = this.crudApi.GetCarsList();
-    s.snapshotChanges().subscribe(data => {
-      this.Car = [];
-      data.forEach(item => {
-        let a = item.payload.toJSON();
-        a['$key'] = item.key;
-        this.Car.push(a as Car);
-        // console.log(this.Car);
+    s.snapshotChanges().subscribe({
+      next: (data) => {
+        this.Car = [];
+        data.forEach(item => {
+          let a = item.payload.toJSON();
+          a['$key'] = item.key;
+          this.Car.push(a as Car);
+          // console.log(this.Car);
+        })
       },
-      error => {
-        console.error('Error in ngOnInit:', error);
+      error: (error) => {
+        console.error('Error in home ngOnInit:', error);
         this.errorMessage = 'An error occurred: ' + error.message;
-      })
-    })
+      }
+    });
   }
 
+  
   dataState() {
     this.crudApi.GetCarsList().valueChanges().subscribe(data => {
       this.preLoader = false;

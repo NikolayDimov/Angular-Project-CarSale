@@ -39,15 +39,17 @@ export class DetailsCarComponent implements OnInit {
     this.crudApi
       .GetCar(id)
       .valueChanges()
-      .subscribe((data) => {
-        this.Car = data;
-        // console.log(this.Car);  // -> this.Car.object
+      .subscribe({
+        next: (data) => {
+          this.Car = data;
+          // console.log(this.Car);  // -> this.Car.object
 
-      },
-        error => {
-          console.error('Error in ngOnInit:', error);
+        },
+        error: (error) => {
+          console.error('Error in details ngOnInit:', error);
           this.errorMessage = 'An error occurred: ' + error.message;
-        });
+        }
+      });
   }
 
 

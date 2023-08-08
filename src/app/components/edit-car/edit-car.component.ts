@@ -30,7 +30,7 @@ export class EditCarComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     public authService: AuthService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.updateCarData();
@@ -38,15 +38,16 @@ export class EditCarComponent implements OnInit {
     this.crudApi
       .GetCar(id)
       .valueChanges()
-      .subscribe((data) => {
-        this.editForm.setValue(data);
-        this.CarImage = data;
-      },
-      error => {
-        console.error('Error in ngOnInit:', error);
-        this.errorMessage = 'An error occurred: ' + error.message;
+      .subscribe({
+        next: (data) => {
+          this.editForm.setValue(data);
+          this.CarImage = data;
+        },
+        error: (error) => {
+          console.error('Error in edit ngOnInit:', error);
+          this.errorMessage = 'An error occurred: ' + error.message;
+        }
       });
-    
   }
 
 
@@ -141,7 +142,7 @@ export class EditCarComponent implements OnInit {
   cancel() {
     this.editForm.reset();
     this.router.navigate(['edit-my-cars']);
-   }
+  }
 
   //   deleteCar(id) {
   //   if (window.confirm('Are sure you want to delete this student ?')) {
