@@ -17,12 +17,21 @@
                                     </div>
                                     <div class="inputFields">
                                         <div class="formGroup">
-                                            <input type="text" class="formControl" placeholder="Email Address" #email
-                                                required>
+                                            <input type="text" class="formControl" placeholder="Email Address" #email="ngModel"
+                                                required ngModel [ngModelOptions]="{standalone: true}">
+
+                                                <div class="alert" *ngIf="email.touched && email.errors">
+                                                    <div *ngIf="email.errors.required">Email is required</div>
+                                                </div>
                                         </div>
                                         <div class="formGroup">
                                             <input type="password" class="formControl" placeholder="Password"
-                                                #userPassword required>
+                                                #userPassword="ngModel" minlength="6" required ngModel [ngModelOptions]="{standalone: true}">
+
+                                                <div class="alert" *ngIf="userPassword.touched && userPassword.errors">
+                                                    <div *ngIf="userPassword.errors.required">Password is required</div>
+                                                    <div *ngIf="userPassword.errors.minlength">Password must be at least 6 characters long</div>
+                                                </div>
                                         </div>
                                     </div>
                                     <!-- Calling SignIn Api from AuthService -->

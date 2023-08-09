@@ -47,7 +47,7 @@
                                             </p>
                                             <p class="error"
                                                 *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">
-                                                Password must be at least
+                                                Password must be at least 6 characters long
                                                 {{ form.get('passGroup')?.get('password')?.errors?.['minlength']?.['requiredLength'] }}
                                                 characters!
                                             </p>
