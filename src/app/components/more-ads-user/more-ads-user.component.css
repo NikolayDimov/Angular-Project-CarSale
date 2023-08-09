@@ -22,3 +22,11 @@
     float: right;
 }
 
+
+
+.image-links {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}

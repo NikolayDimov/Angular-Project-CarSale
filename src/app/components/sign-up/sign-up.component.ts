@@ -3,7 +3,7 @@ import { AuthService } from "../../shared/services/auth.service";
 import { FormBuilder, Validators } from "@angular/forms";
 import { appEmailValidator } from "src/app/shared/validators/app-email-validator";
 import { matchPasswordsValidator } from "src/app/shared/validators/match-passwords-validator";
-import { User } from '../../shared/user';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -36,5 +36,11 @@ export class SignUpComponent implements OnInit {
     private fb: FormBuilder) { }
   
   ngOnInit() { }
+
+
+  // There is also func SingUp in html template
+  SignUpUser() {
+    this.authService.SignUp(this.form.controls.email.value.trim(), this.form.controls.passGroup.controls.password.value);
+  }
 
 }

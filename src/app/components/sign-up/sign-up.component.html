@@ -18,6 +18,8 @@
                                     <div class="formGroup">
                                         <input type="email" class="formControl" formControlName="email"
                                             placeholder="Email Address" #userEmail required />
+
+                                            <!-- #userEmail for the func SingUp in html template row 88-->
                                     </div>
 
                                     <ng-container *ngIf="form.get('email')?.touched">
@@ -38,6 +40,8 @@
                                         <div class="formGroup">
                                             <input type="password" class="formControl" formControlName="password"
                                                 placeholder="Password - min 6 symbols" #userPwd required />
+
+                                                <!-- #userPwd for the func SingUp in html template row 88-->
                                         </div>
 
                                         <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
@@ -48,7 +52,9 @@
                                             <p class="error"
                                                 *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">
                                                 Password must be at least 6 characters long
-                                                {{ form.get('passGroup')?.get('password')?.errors?.['minlength']?.['requiredLength'] }}
+                                                {{
+                                                form.get('passGroup')?.get('password')?.errors?.['minlength']?.['requiredLength']
+                                                }}
                                                 characters!
                                             </p>
                                         </ng-container>
@@ -72,10 +78,17 @@
 
 
                                     <div class="formGroup">
+                                        <!--With Function in TS file -->
                                         <input type="button" class="btn btnPrimary" value="Register"
+                                            [disabled]="form.invalid" (click)="SignUpUser()" />
+
+                                        <!--With Function in html template -->
+                                        <!-- <input type="button" class="btn btnPrimary" value="Register"
                                             [disabled]="form.invalid"
-                                            (click)="authService.SignUp(userEmail.value.trim(), userPwd.value)"/>
+                                            (click)="authService.SignUp(userEmail.value.trim(), userPwd.value)"/> -->
                                     </div>
+
+
                                     <div class="formGroup">
                                         <span class="or"><span class="orInner">Or</span></span>
                                     </div>
@@ -95,9 +108,7 @@
                             </div>
                         </div>
 
-
                     </form>
-
 
 
 
