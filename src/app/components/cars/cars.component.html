@@ -29,11 +29,10 @@
                 <div>There is no Cars offers</div>
             </div> -->
 
+            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 
-            <div class="col-md-9">
+            <div *ngIf="Cars" class="col-md-9">
 
-                <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-                
                 <!-- Filtered Cars Data -->
                 <div class="row" *ngIf="isFilterApplied">
 
@@ -45,7 +44,7 @@
                             <!-- <div>{{ car.$key }}</div> -->
                             <!-- {{isLoggedInAuth | json}} -->
 
-                            <a routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
+                            <a routerLink="/details-car/{{ car.$key }}"><img class="image-links" src={{car.imageUrl}} alt=""></a>
 
 
                             <div class="down-content">
@@ -83,13 +82,8 @@
                             <!-- <div>{{ car.$key }}</div> -->
                             <!-- {{isLoggedInAuth | json}} -->
 
-                            <a routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
-                            <!-- <ng-template ngIf="isLoggedInAuth">
-                                <a  routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
-                            </ng-template>
-                            <ng-template ngIf="isLoggedInAuth">
-                                <a  routerLink="/details-car/{{ car.$key }}"><img src={{car.imageUrl}} alt=""></a>
-                            </ng-template> -->
+                            <a routerLink="/details-car/{{ car.$key }}"><img class="image-links" src={{car.imageUrl}} alt=""></a>
+                            
 
                             <div class="down-content">
                                 <a routerLink="/details-car/{{ car.$key }}">

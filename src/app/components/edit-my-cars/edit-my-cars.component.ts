@@ -130,12 +130,7 @@ export class EditMyCarsComponent implements OnInit {
   }
 
   
-  deleteCar(carId) {
-    if (window.confirm('Are sure you want to delete this Car Offer ?')) {
-      this.crudApi.DeleteCar(carId)
-      this.toastr.success(carId.brand + ' successfully deleted!');
-    }
-  }
+
 
 
 

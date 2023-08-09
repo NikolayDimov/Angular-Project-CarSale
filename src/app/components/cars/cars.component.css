@@ -1,13 +1,21 @@
-.pages{
+.pages {
     position: relative;
     float: right;
 }
 
-.detail-text-title{
+.detail-text-title {
     margin-bottom: 50px;
     text-align: center;
 }
 
-.products{
+.products {
     margin-top: 40px;
+}
+
+
+.image-links {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
 }

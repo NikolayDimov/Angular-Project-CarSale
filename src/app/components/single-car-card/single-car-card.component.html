@@ -1,0 +1,36 @@
+<div class="product-item">
+    <!-- <div>{{ car.$key }}</div> -->
+    <a routerLink="/edit-car/{{ dataItem.$key }}"><img class="image-links" src={{dataItem.imageUrl}} alt=""></a>
+    
+    <div class="down-content">
+        <a routerLink="/edit-car/{{ dataItem.$key }}">
+            <h4>{{dataItem.brand}} {{dataItem.model}}</h4>
+        </a>
+
+        <h6> ${{dataItem.price}}</h6>
+
+        <p>{{dataItem.euStandard}} &nbsp;/&nbsp; {{dataItem.engine}}
+            &nbsp;/&nbsp;{{dataItem.month}}
+            {{dataItem.year}} &nbsp;/&nbsp;</p>
+
+        <small>
+            <strong title="Author"><i class="fa fa-dashboard"></i> {{dataItem.mileage}}
+                km</strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <strong title="Author"><i class="fa fa-cube"></i>
+                {{dataItem.color}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong title="Views"><i class="fa fa-cog"></i> {{dataItem.gearshift}}</strong>
+        </small>
+    </div>
+
+
+    <div class="col-12 btn-container">
+        <div class="btnForm">
+            <button class="btn btn-outline-danger" (click)="deleteCar(dataItem.$key)">Delete</button>
+        </div>
+        <div class="btnForm">
+            <button class="btn btn-outline-primary mr-5" routerLink="/edit-car/{{ dataItem.$key }}">Edit</button>
+        </div>
+    </div>
+
+</div>

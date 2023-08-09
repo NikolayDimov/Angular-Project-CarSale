@@ -37,7 +37,7 @@
 
                                         <div class="formGroup">
                                             <input type="password" class="formControl" formControlName="password"
-                                                placeholder="Password" #userPwd required />
+                                                placeholder="Password - min 6 symbols" #userPwd required />
                                         </div>
 
                                         <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">

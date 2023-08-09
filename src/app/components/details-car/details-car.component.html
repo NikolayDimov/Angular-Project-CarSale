@@ -1,4 +1,6 @@
-<div *ngIf="Car.imageUrl" class="page-heading contact-heading header-text" 
+<p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+<div *ngIf="Car" class="page-heading contact-heading header-text" 
     style="background-image: url({{Car.imageUrl}});">
 
 
@@ -7,7 +9,6 @@
         <div class="title">Car Details</div>
 
         <div class="row">
-            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 
             <div class="col-md-10">
                 <div class="text-content">
