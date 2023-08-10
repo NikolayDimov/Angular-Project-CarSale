@@ -1,17 +1,32 @@
 # Angular-Project-CarSale
 
-CarSale app where clients can browse existing car listings and upload their ads after registration
+The Project CarSale app is using Angular, HTML and CSS, and Firebase Realtime Database as a server
+In CarSale app clients can browse existing cars, check cars details and upload their ads after registration
 
-You have possibility:
-- to browse car ads
-- to add your car ads after registration
-- to edit car ads
-- search in car catalog
-- details page
-- my cars page
-- home page
-- about page
-- contacts page
+
+Functionalities:
+
+Guest:
+ - Homepage
+ - Catalogue
+ - Search in All Cars Catalog
+ - Login
+ - Register
+ - About Us
+ - Contact Us
+
+
+User:
+ - Homepage
+ - Catalogue
+ - Search in All Cars Catalog
+ - Details page
+ - Upload Car Ads
+ - Edit and Delete Car Ads
+ - My Car Ads Page
+ - About Us
+ - Contact Us
+
 
 # AngularProject
 
