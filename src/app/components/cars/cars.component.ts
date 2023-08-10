@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Car } from 'src/app/shared/car';
-import { CrudService } from 'src/app/shared/services/crud.service';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { Car } from '../../shared/car';
+import { CrudService } from '../../shared/services/crud.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Car } from '../car';
-import {AngularFireDatabase, AngularFireList, AngularFireObject} from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/compat/database';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -11,11 +11,11 @@ export class CrudService {
 
   carsRef: AngularFireList<any>;
   carRef: AngularFireObject<any>;
-  
+
   constructor(
     private db: AngularFireDatabase,
     public router: Router
-    ) { }
+  ) { }
 
   // Create Car
   AddCar(car: Car) {

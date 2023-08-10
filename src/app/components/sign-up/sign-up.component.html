@@ -7,10 +7,10 @@
                 <div class="text-content">
 
 
-                    <form class="register" [formGroup]="form">
+                    <div class="displayTable">
+                        <div class="displayTableCell">
 
-                        <div class="displayTable">
-                            <div class="displayTableCell">
+                            <form class="register" [formGroup]="form">
                                 <div class="authBlock">
                                     <div class="title">
                                         <h3>Register Form</h3>
@@ -19,7 +19,7 @@
                                         <input type="email" class="formControl" formControlName="email"
                                             placeholder="Email Address" #userEmail required />
 
-                                            <!-- #userEmail for the func SingUp in html template row 88-->
+                                        <!-- #userEmail for the func SingUp in html template row 88-->
                                     </div>
 
                                     <ng-container *ngIf="form.get('email')?.touched">
@@ -41,7 +41,7 @@
                                             <input type="password" class="formControl" formControlName="password"
                                                 placeholder="Password - min 6 symbols" #userPwd required />
 
-                                                <!-- #userPwd for the func SingUp in html template row 88-->
+                                            <!-- #userPwd for the func SingUp in html template row 88-->
                                         </div>
 
                                         <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
@@ -93,7 +93,7 @@
                                         <span class="or"><span class="orInner">Or</span></span>
                                     </div>
                                     <!-- Continue with Google -->
-                                    <div class="formGroup">
+                                    <div appBtnHighlight class="formGroup">
                                         <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
                                             <i class="fab fa-google-plus-g"></i>
                                             Continue with Google
@@ -102,13 +102,14 @@
                                 </div>
                                 <div class="redirectToLogin">
                                     <div><span>Already have an account?</span></div>
-                                    <div class="redirectToLoginHover"><span class="redirect" routerLink="/sign-in">
+                                    <div appBtnHighlight class="redirectToLoginHover"><span class="redirect"
+                                            routerLink="/sign-in">
                                             Login</span></div>
                                 </div>
-                            </div>
-                        </div>
+                            </form>
 
-                    </form>
+                        </div>
+                    </div>
 
 
 

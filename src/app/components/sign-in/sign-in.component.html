@@ -35,7 +35,7 @@
                                         </div>
                                     </div>
                                     <!-- Calling SignIn Api from AuthService -->
-                                    <div class="formGroup">
+                                    <div appBtnHighlight class="formGroup">
                                         <input type="button" class="btn btnPrimary" value="Log in"
                                             (click)="authService.SignIn(email.value.trim(), userPassword.value)">
                                     </div>
@@ -43,7 +43,7 @@
                                         <span class="or"><span class="orInner">Or</span></span>
                                     </div>
                                     <!-- Calling GoogleAuth Api from AuthService -->
-                                    <div class="formGroup">
+                                    <div appBtnHighlight class="formGroup">
                                         <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
                                             <i class="fab fa-google-plus-g"></i>
                                             Log in with Google
@@ -56,7 +56,7 @@
                             </form>
                             <div class="redirectToLogin">
                                 <div> <span>Don't have an account?</span></div>
-                                <div class="redirectToLoginHover"><span class="redirect" routerLink="/register-user"> Register</span></div>
+                                <div appBtnHighlight class="redirectToRegisterHover"><span class="redirect" routerLink="/register-user"> Register</span></div>
                         </div>
                     </div>
 

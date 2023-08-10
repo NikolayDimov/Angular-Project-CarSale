@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
-import { Car } from 'src/app/shared/car';
+import { Car } from '../../shared/car';
 
 
 @Component({

@@ -16,7 +16,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   submitHandler(form: NgForm): void {
-    console.log(form.value);
+    // console.log(form.value);
     const value : {email: string; password: string} = form.value;
     
   }

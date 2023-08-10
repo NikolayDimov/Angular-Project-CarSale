@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CrudService } from 'src/app/shared/services/crud.service';
+import { CrudService } from '../../shared/services/crud.service';
 import { ToastrService } from 'ngx-toastr';
 import { Location } from '@angular/common';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { Car } from 'src/app/shared/car';
+import { AuthService } from '../../shared/services/auth.service';
+import { Car } from '../../shared/car';
 
 
 

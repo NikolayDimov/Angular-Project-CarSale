@@ -39,9 +39,6 @@ div {
     font-weight: bold;
 }
 
-.redirectToLoginHover:hover {
-    background-color: #F33F3F;
-}
 
 .title {
     text-align: center;
@@ -50,12 +47,20 @@ div {
     font-weight: bold;
 }
 
-.btn:hover {
-    background-color: #F33F3F;
-}
 
 .forgotPassword {
     cursor: pointer;
+}
+
+
+/* Use directive appBtnHighlight */
+
+/* .btn:hover {
+    background-color: #F33F3F;
+} */
+
+/* .redirectToLoginHover:hover {
+    background-color: #F33F3F;
 }
 
 .redirectToLoginHover {
@@ -65,7 +70,7 @@ div {
 .redirectToLoginHover:hover {
     background-color: #F33F3F;
     border-radius: 4px;
-}
+} */
 
 .formGroup{
     margin: 10px;

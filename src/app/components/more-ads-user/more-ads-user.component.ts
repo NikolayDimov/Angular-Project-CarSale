@@ -2,8 +2,8 @@
 import { Component, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from '../../shared/services/user.service';
-import { Car } from 'src/app/shared/car';
-import { CrudService } from 'src/app/shared/services/crud.service';
+import { Car } from '../../shared/car';
+import { CrudService } from '../../shared/services/crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 

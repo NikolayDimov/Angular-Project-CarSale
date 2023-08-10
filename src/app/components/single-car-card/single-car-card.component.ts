@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Car } from 'src/app/shared/car';
 import { Router } from '@angular/router';
-import { CrudService } from 'src/app/shared/services/crud.service';
+import { CrudService } from '../../shared/services/crud.service';
 import { ToastrService } from 'ngx-toastr';
 
 

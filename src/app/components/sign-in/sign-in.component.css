@@ -34,15 +34,6 @@ div {
     font-weight: bold;
 }
 
-.redirectToLoginHover {
-    border-radius: 4px solid #F33F3F;
-    color: #6fb1d7;
-    font-weight: bold;
-}
-
-.redirectToLoginHover:hover {
-    background-color: #F33F3F;
-}
 
 .title {
     text-align: center;
@@ -51,22 +42,38 @@ div {
     font-weight: bold;
 }
 
-.btn:hover {
-    background-color: #F33F3F;
-}
+
 
 .forgotPassword {
     cursor: pointer;
 }
 
-.redirectToLoginHover {
+
+/* Use directive appBtnHighlight */
+
+/* .btn:hover {
+    background-color: #F33F3F;
+} */
+
+/* .redirectToRegisterHover {
+    border-radius: 4px solid #F33F3F;
+    color: #6fb1d7;
+    font-weight: bold;
+}
+
+.redirectToRegisterHover:hover {
+    background-color: #F33F3F;
+} 
+
+.redirectToRegisterHover {
     cursor: pointer;
 }
 
-.redirectToLoginHover:hover {
+.redirectToRegisterHover:hover {
     background-color: #F33F3F;
     border-radius: 4px;
-}
+} */
+
 
 .formGroup {
     margin: 10px;

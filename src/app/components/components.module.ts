@@ -31,6 +31,7 @@ import { DropDownFilterComponent } from './drop-down-filter/drop-down-filter.com
 import { MoreAdsUserComponent } from './more-ads-user/more-ads-user.component';
 import { ShortenPipe } from '../shared/pipes/shorten.pipe';
 import { SingleCarCardComponent } from './single-car-card/single-car-card.component';
+import { BtnHighlightDirective } from '../shared/directives/btn-highlight.directive';
 
 
 
@@ -54,7 +55,8 @@ import { SingleCarCardComponent } from './single-car-card/single-car-card.compon
     DropDownFilterComponent,
     MoreAdsUserComponent,
     ShortenPipe,
-    SingleCarCardComponent
+    SingleCarCardComponent,
+    BtnHighlightDirective,
   ],
   imports: [
     CommonModule,

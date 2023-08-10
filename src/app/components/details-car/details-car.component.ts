@@ -1,12 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CrudService } from 'src/app/shared/services/crud.service';
+import { CrudService } from '../../shared/services/crud.service';
 import { Location } from '@angular/common';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { Car } from 'src/app/shared/car';
-import { ShortenPipe } from 'src/app/shared/pipes/shorten.pipe';
-
+import { AuthService } from '../../shared/services/auth.service';
+import { Car } from '../../shared/car';
+import { ShortenPipe } from '../../shared/pipes/shorten.pipe';
 import { DataSharedService } from '../../shared/services/sharedObj.service';
 
 
