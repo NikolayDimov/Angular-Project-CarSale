@@ -35,8 +35,6 @@ import { BtnHighlightDirective } from '../shared/directives/btn-highlight.direct
 
 
 
-
-
 @NgModule({
   declarations: [
     ContactsComponent,
@@ -67,8 +65,7 @@ import { BtnHighlightDirective } from '../shared/directives/btn-highlight.direct
     ToastrModule.forRoot(), // ToastrModule added
     NgxPaginationModule,  // Include it in imports array
     CarouselModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   exports: [
     ContactsComponent,

@@ -31,8 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // NGX Pagination
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-import { BtnHighlightDirective } from './shared/directives/btn-highlight.directive';
 
+import { GoogleMapsModule } from '@angular/google-maps'
 
 
 // Search module
@@ -59,6 +59,8 @@ import { BtnHighlightDirective } from './shared/directives/btn-highlight.directi
     ReactiveFormsModule,
     NgxPaginationModule,  // Include it in imports array
     HttpClientModule,
+    GoogleMapsModule,
+
   ],
   providers: [AuthService, CrudService, DataService, DataSharedService],
   bootstrap: [AppComponent]

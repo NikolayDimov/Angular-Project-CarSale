@@ -64,6 +64,23 @@
     </div>
   </div>
 
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <!-- <div id="map">
+      <iframe src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcoHcXRkk-WaELveJLVcPIme8ra5uJuzg" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="map" style="height: 400px;"></div> -->
+
+
+    <button (click)="getGeolocation()">Get My Geolocation</button>
+    <p *ngIf="latitude !== undefined && longitude !== undefined">
+      Latitude: {{ latitude }}, Longitude: {{ longitude }}
+    </p>
+    <!-- GOOGLE KEY -->
+    <!-- AIzaSyBcoHcXRkk-WaELveJLVcPIme8ra5uJuzg -->
+  </div>
+
   
   <div class="send-message">
     <div class="container">

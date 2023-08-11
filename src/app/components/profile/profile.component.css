@@ -1,4 +1,4 @@
-.container{
+.container {
     padding: 10px;
     box-sizing: border-box;
     max-width: 350px;
@@ -14,7 +14,7 @@
 }
 
 div {
-    color:  rgb(248, 244, 253);
+    color: rgb(248, 244, 253);
 }
 
 .btn {
@@ -24,6 +24,20 @@ div {
 }
 
 
-.flex{
-    color:  rgb(248, 244, 253);
+.white-color {
+    color: rgb(248, 244, 253);
+}
+
+.flex {
+    margin-bottom: 10px;
+}
+
+.btn {
+    border-radius: 4px solid #F33F3F;
+    color: #6fb1d7;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #F33F3F;
 }
