@@ -32,6 +32,7 @@ import { MoreAdsUserComponent } from './more-ads-user/more-ads-user.component';
 import { ShortenPipe } from '../shared/pipes/shorten.pipe';
 import { SingleCarCardComponent } from './single-car-card/single-car-card.component';
 import { BtnHighlightDirective } from '../shared/directives/btn-highlight.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -55,6 +56,7 @@ import { BtnHighlightDirective } from '../shared/directives/btn-highlight.direct
     ShortenPipe,
     SingleCarCardComponent,
     BtnHighlightDirective,
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,

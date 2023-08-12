@@ -17,6 +17,7 @@ import { DetailsCarComponent } from './components/details-car/details-car.compon
 import { EditMyCarsComponent } from './components/edit-my-cars/edit-my-cars.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { MoreAdsUserComponent } from './components/more-ads-user/more-ads-user.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 
@@ -37,7 +38,7 @@ const routes: Routes = [
   { path: 'details-car/:id', component: DetailsCarComponent, canActivate: [AuthGuard] },
   { path: 'edit-my-cars', component: EditMyCarsComponent },
   { path: 'more-ads-user', component: MoreAdsUserComponent },
-  { path: '**', redirectTo: 'home' } 
+  { path: '**', component: PageNotFoundComponent} 
 ];
 
 @NgModule({

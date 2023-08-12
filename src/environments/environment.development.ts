@@ -1,7 +1,7 @@
 export const environment = {
     production: false,
     firebase: {
-      apiKey: "AIzaSyBcoHcXRkk-WaELveJLVcPIme8ra5uJuzg",
+      apiKey: "AIzaSyC86GKReOUDVx0K-RdEUxHYZs9LXuoKbnI",
       authDomain: "fire-test-base-6e896.firebaseapp.com",
       databaseURL: "https://fire-test-base-6e896-default-rtdb.europe-west1.firebasedatabase.app",
       projectId: "fire-test-base-6e896",
