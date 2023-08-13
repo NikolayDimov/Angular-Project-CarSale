@@ -14,6 +14,7 @@ import { AuthService } from '../../shared/services/auth.service';
 export class CreateCarComponent implements OnInit {
   public carForm: FormGroup;
 
+  // for the feature with additional extras in array
   // Data: Array<any> = [
   //   { name: 'LED Lights', value: 'ledLights' },
   //   { name: 'Electric Mirrors', value: 'electricMirrors' },
@@ -35,29 +36,29 @@ export class CreateCarComponent implements OnInit {
     public toastr: ToastrService,
   ) {
     this.carForm = this.fb.group({
-      checkArray: this.fb.array([])
+      checkArray: this.fb.array([])  // for the feature with additional extras in array
     })
   }
 
   ngOnInit(): void {
-    //this.crudApi.GetCarsList();
+    // this.crudApi.GetCarsList(); // not needed
     this.car_Form();
   }
 
   car_Form() {
     this.carForm = this.fb.group({
       uid: this.authService.uid,
-      brand: ['', [Validators.required, Validators.minLength(3)]],
-      model: ['', [Validators.required, Validators.minLength(2)]],
+      brand: ['', [Validators.required, Validators.minLength(2), this.emptyString]],
+      model: ['', [Validators.required, Validators.minLength(2), this.emptyString]],
       engine: [''],
       gearshift: [''],
       euStandard: [''],
-      color: [''],
+      color: ['', [Validators.required, Validators.minLength(2), this.emptyString]],
       month: [''],
-      year: [''],
-      mileage: [''],
-      price: [''],
-      imageUrl: [''],
+      year: ['', [Validators.required, Validators.minLength(4), this.emptyString]],
+      mileage: ['', [Validators.required, Validators.minLength(1), this.emptyString]],
+      price: ['', [Validators.required, Validators.minLength(1), this.emptyString]],
+      imageUrl: ['', [Validators.required, Validators.minLength(1), this.emptyString]],
       category: [''],
       city: [''],
       additionalInfo: [''],
@@ -162,6 +163,8 @@ export class CreateCarComponent implements OnInit {
 
   submitCarData() {
     this.crudApi.AddCar(this.carForm.value);  // to be promise/observable
+    console.log(this.carForm.value);
+    
     this.toastr.success(
       this.carForm.controls['brand'].value + ' successfully added!'
     );
@@ -170,6 +173,13 @@ export class CreateCarComponent implements OnInit {
 
 
 
+  // Custom Validator for checking empty or whitespace
+  emptyString(control) {
+    if (control.value && control.value.trim() === '') {
+      return { noWhiteSpace: true };
+    }
+    return null;
+  }
 
 
   // onCheckboxChange(e: any) {

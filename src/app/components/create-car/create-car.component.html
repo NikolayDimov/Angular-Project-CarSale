@@ -20,7 +20,10 @@
                                     Please enter Brand
                                 </p>
                                 <p *ngIf="brand.errors?.['minlength']" class="error">
-                                    Brand shouldn't be less than 3 characters long
+                                    Brand can not be less than 2 characters long
+                                </p>
+                                <p *ngIf="brand.errors?.['emptyString']" class="error">
+                                    Brand can not be empty string
                                 </p>
                             </ng-container>
                         </div>
@@ -35,6 +38,9 @@
                                 </p>
                                 <p *ngIf="model.errors?.['minlength']" class="error">
                                     Model shouldn't be less than 2 characters long
+                                </p>
+                                <p *ngIf="model.errors?.['emptyString']" class="error">
+                                    Model can not be empty string
                                 </p>
                             </ng-container>
                         </div>
@@ -98,6 +104,12 @@
                                 <p *ngIf="color.touched && color.invalid" class="error">
                                     Please enter Color
                                 </p>
+                                <p *ngIf="color.errors?.['minlength']" class="error">
+                                    Color can not be less than 2 characters long
+                                </p>
+                                <p *ngIf="color.errors?.['emptyString']" class="error">
+                                    Color can not be empty string
+                                </p>
                             </ng-container>
                         </div>
 
@@ -134,6 +146,12 @@
                                 <p *ngIf="year.touched && year.invalid" class="error">
                                     Please enter Year
                                 </p>
+                                <p *ngIf="year.errors?.['minlength']" class="error">
+                                    Year can not be less than 2 characters long
+                                </p>
+                                <p *ngIf="year.errors?.['emptyString']" class="error">
+                                    Year can not be empty string
+                                </p>
                             </ng-container>
                         </div>
 
@@ -144,6 +162,12 @@
                             <ng-container *ngIf="carForm.get('mileage')?.touched">
                                 <p *ngIf="mileage.touched && mileage.invalid" class="error">
                                     Please enter Mileage
+                                </p>
+                                <p *ngIf="mileage.errors?.['minlength']" class="error">
+                                    Mileage can not be less than 1 character long
+                                </p>
+                                <p *ngIf="mileage.errors?.['emptyString']" class="error">
+                                    Mileage can not be empty string
                                 </p>
                             </ng-container>
                         </div>
@@ -156,6 +180,12 @@
                                 <p *ngIf="price.touched && price.invalid" class="error">
                                     Please enter Price
                                 </p>
+                                <p *ngIf="price.errors?.['minlength']" class="error">
+                                    Price can not be less than 1 character long
+                                </p>
+                                <p *ngIf="price.errors?.['emptyString']" class="error">
+                                    Price can not be empty string
+                                </p>
                             </ng-container>
                         </div>
 
@@ -163,6 +193,18 @@
                             <label for="inputImage" class="form-label">Image</label>
                             <input type="text" class="form-control" placeholder="Add Image URL"
                                 formControlName="imageUrl">
+                            <!-- errors-->
+                            <ng-container *ngIf="carForm.get('imageUrl')?.touched">
+                                <p *ngIf="imageUrl.touched && price.invalid" class="error">
+                                    Please enter Car Image
+                                </p>
+                                <p *ngIf="imageUrl.errors?.['minlength']" class="error">
+                                    Image can not be less than 1 character long
+                                </p>
+                                <p *ngIf="imageUrl.errors?.['emptyString']" class="error">
+                                    Image can not be empty string
+                                </p>
+                            </ng-container>
                         </div>
 
                         <div class="col-md-3">

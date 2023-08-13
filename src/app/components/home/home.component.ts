@@ -13,7 +13,7 @@ import { AuthService } from '../../shared/services/auth.service';
 
 export class HomeComponent implements OnInit {
   p: number = 1;
-  Car: Car[];
+  Cars: Car[];
   hideWhenNoCar: boolean = false;
   noData: boolean = false;
   preLoader: boolean = true;
@@ -38,13 +38,15 @@ export class HomeComponent implements OnInit {
     let s = this.crudApi.GetCarsList();
     s.snapshotChanges().subscribe({
       next: (data) => {
-        this.Car = [];
+        this.Cars = [];
         data.forEach(item => {
           let a = item.payload.toJSON();
           a['$key'] = item.key;
-          this.Car.push(a as Car);
+          this.Cars.push(a as Car);
           // console.log(this.Car);
-        })
+        });
+        this.Cars.reverse();
+        // console.log('reversed car array' + this.Cars);
       },
       error: (error) => {
         console.error('Error in home ngOnInit:', error);

@@ -57,7 +57,9 @@ export class CarsComponent implements OnInit {
           a['$key'] = item.key;
           this.Cars.push(a as Car);
           // console.log(this.Cars); // array of objects with cars
-        })
+        });
+        this.Cars.reverse();
+        // console.log('reversed car array' + this.Cars);
       },
       error: (error) => {
         console.error('Error in carsCatalog ngOnInit:', error);
