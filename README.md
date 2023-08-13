@@ -1,7 +1,15 @@
 # Angular-Project-CarSale
 
-The Project CarSale app is using Angular, HTML and CSS, and Firebase Realtime Database as a server
-In CarSale app clients can browse existing cars, check cars details and upload their ads after registration
+CarSale
+
+This project was generated with Angular CLI version 16.1.4.
+Development server
+
+Run ng serve for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+
+The Project CarSale app is using Firebase Realtime Database as a server.
+In CarSale app clients can browse existing cars, check cars details and upload their ads after registration.
+Edit and delete cars offers is also available.
 
 
 Functionalities:
