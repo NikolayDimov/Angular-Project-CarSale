@@ -40,7 +40,7 @@ export class CreateCarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.crudApi.GetCarsList();
+    //this.crudApi.GetCarsList();
     this.car_Form();
   }
 
@@ -48,7 +48,7 @@ export class CreateCarComponent implements OnInit {
     this.carForm = this.fb.group({
       uid: this.authService.uid,
       brand: ['', [Validators.required, Validators.minLength(3)]],
-      model: [''],
+      model: ['', [Validators.required, Validators.minLength(2)]],
       engine: [''],
       gearshift: [''],
       euStandard: [''],
@@ -161,7 +161,7 @@ export class CreateCarComponent implements OnInit {
   }
 
   submitCarData() {
-    this.crudApi.AddCar(this.carForm.value);
+    this.crudApi.AddCar(this.carForm.value);  // to be promise/observable
     this.toastr.success(
       this.carForm.controls['brand'].value + ' successfully added!'
     );

@@ -12,3 +12,7 @@ export function appEmailValidator(domains: string[]): ValidatorFn {
       : { appEmailValidator: true };
   };
 }
+
+
+// It takes a form control as its parameter and returns either null (indicating the control is valid) or an object 
+// with a validation error key (in this case, appEmailValidator: true), indicating that the validation has failed.

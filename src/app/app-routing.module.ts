@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   // { path: 'home', loadChildren: () => import('./components/home/home.component').then(m => m.HomeComponent) },
-  { path: 'createCar', component: CreateCarComponent },
+  { path: 'createCar', component: CreateCarComponent, canActivate: [AuthGuard] },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
@@ -34,9 +34,9 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsComponent },
   { path: 'cars', component: CarsComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'edit-car/:id', component: EditCarComponent },
+  { path: 'edit-car/:id', component: EditCarComponent, canActivate: [AuthGuard] },
   { path: 'details-car/:id', component: DetailsCarComponent, canActivate: [AuthGuard] },
-  { path: 'edit-my-cars', component: EditMyCarsComponent },
+  { path: 'edit-my-cars', component: EditMyCarsComponent, canActivate: [AuthGuard] },
   { path: 'more-ads-user', component: MoreAdsUserComponent },
   { path: '**', component: PageNotFoundComponent} 
 ];

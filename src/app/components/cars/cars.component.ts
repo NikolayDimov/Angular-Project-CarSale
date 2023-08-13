@@ -66,6 +66,8 @@ export class CarsComponent implements OnInit {
     });
   }
 
+  //  data.forEach(item =>  reverse
+
   dataState() {
     this.crudApi.GetCarsList().valueChanges().subscribe(data => {
       this.preLoader = false;

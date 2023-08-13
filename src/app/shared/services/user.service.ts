@@ -24,3 +24,9 @@ export class DataService {
   }
 }
 
+
+
+/* snapshotChanges():
+This method is used to listen to changes in data within a database collection or document and receive updates 
+in the form of snapshots. 
+It returns an observable that emits these snapshots whenever there are changes in the data.*/

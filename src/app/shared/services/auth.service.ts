@@ -74,8 +74,7 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
+        /* Call the SendVerificaitonMail() function when new user sign up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
@@ -177,7 +176,7 @@ export class AuthService {
     return user;
   }
 
-  // Get UID
+  // Get UID  - User Id
   get uid(): string {
     const uid = JSON.parse(localStorage.getItem('user')!).uid;
     return uid;
