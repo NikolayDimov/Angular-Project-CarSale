@@ -162,7 +162,7 @@ export class CreateCarComponent implements OnInit {
   }
 
   submitCarData() {
-    this.crudApi.AddCar(this.carForm.value);  // to be promise/observable
+    this.crudApi.AddCar(this.carForm.value);  
     console.log(this.carForm.value);
     
     this.toastr.success(

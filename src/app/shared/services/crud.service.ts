@@ -50,7 +50,7 @@ export class CrudService {
       fourFiveDoors: car.fourFiveDoors
     });
     this.router.navigate(['cars']);
-    //return this.carsRef;
+    return this.carsRef;
   }
 
   // Fetch Single Car Object
